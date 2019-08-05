@@ -1,7 +1,7 @@
 * Resources
 
 ** Books
-- Practical Common Lisp
+- Practical Common Lisp (http://www.gigamonkeys.com/book/)
 - Common Lisp Recipes 
 - Lisp Cookbook (https://lispcookbook.github.io/cl-cookbook/)
 - How to Design Programs (https://htdp.org/)
