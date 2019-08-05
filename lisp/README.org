@@ -1,3 +1,5 @@
+* Resources
+
 ** Books
 - Practical Common Lisp
 - Common Lisp Recipes 
