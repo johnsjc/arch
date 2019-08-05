@@ -24,10 +24,7 @@
 - Paradigms of Artificial Intelligence Programming (all S and M exercises at least)
 - Common Lisp Recipes
 
-
 *** Where to go from here
-- [[https://www.dreamsongs.com/Files/PatternsOfSoftware.pdf][Patterns of Software by Richard Gabriel]]
-
 **** Macros
 - [[https://sep.yimg.com/ty/cdn/paulgraham/onlisp.pdf][On Lisp]]
 - Let Over Lambda
@@ -46,8 +43,8 @@
 **** Games
 - Land of Lisp
 
-
 *** More resources
+- [[https://www.dreamsongs.com/Files/PatternsOfSoftware.pdf][Patterns of Software by Richard Gabriel]]
 - [[https://github.com/CodyReichert/awesome-cl][Awesome CL]]
 - [[https://htdp.org/][How to Design Programs]]
 - The Little Schemer
