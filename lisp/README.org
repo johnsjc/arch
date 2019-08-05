@@ -1,15 +1,54 @@
 * Resources
 
-** Books
-- Practical Common Lisp (http://www.gigamonkeys.com/book/)
-- Common Lisp Recipes 
-- Lisp Cookbook (https://lispcookbook.github.io/cl-cookbook/)
-- How to Design Programs (https://htdp.org/)
-- Land of Lisp
-- Lisp for the Web
-- Paradigms of AI Programming
-- On Lisp
+** History of Lisp
+- [[https://en.wikipedia.org/wiki/Lisp_(programming_language)#History][Wikipedia's History of Lisp]]
+- [[https://en.wikipedia.org/wiki/Common_Lisp#History][Wikipedia's History of Common Lisp]]
+- [[http://www.gigamonkeys.com/book/introduction-why-lisp.html#where-it-began][PCL's Where it began]]
+- [[https://www.cs.cmu.edu/Groups//AI/lang/lisp/faq/lisp_2.faq][Where did Lisp come from?]]
+- [[http://www.nhplace.com/kent/Papers/cl-untold-story.html][Common Lisp: The Untold Story by Kent Pitman]]
+- [[https://www.dreamsongs.com/Files/HOPL2-Uncut.pdf][The Evolution of Lisp by Guy Steele and Richard Gabriel]]
+
+** Documentation
+- [[http://www.lispworks.com/documentation/lw70/CLHS/Front/Contents.htm][Common Lisp Language Specification]]
+
+** Roadmap
+*** Basics of Common Lisp
+- Common Lisp: A Gentle Introduction to Symbolic Computation (all exercises)
+- [[http://www.gigamonkeys.com/book/][Practical Common Lisp]]
+*** Practice
+- [[https://exercism.io/my/tracks/common-lisp][Exercism]], [[https://projecteuler.net/][Project Euler]], [[https://adventofcode.com/][Advent of Code]]
+*** Learn Idiomatic Common Lisp
+- Paradigms of Artificial Intelligence Programming (all S and M exercises at least)
+- Common Lisp Recipes
+*** Where to go from here
+- [[https://www.dreamsongs.com/Files/PatternsOfSoftware.pdf][Patterns of Software by Richard Gabriel]]
+**** Macros
+- [[https://sep.yimg.com/ty/cdn/paulgraham/onlisp.pdf?t=1564708198&]][On Lisp]]
 - Let Over Lambda
+**** CLOS
+- Object-oriented Programming in Common Lisp: A Programmer's Guide to CLOS
+- The Art of the Metaobject Protocol
+**** Low-level Lisp
+- [[http://stevelosh.com/blog/2016/12/chip8-cpu/][CHIP-8 in Common Lisp]]
+- [[Embedded Common Lisp][https://common-lisp.net/project/ecl/main.html]]
+**** Games
+- Land of Lisp
+**** Common Libraries
+- [[https://common-lisp.net/project/alexandria/][Alexandria]]
+- [[https://common-lisp.net/project/bordeaux-threads/][Bordeaux Threads (concurrency)]]
+- [[https://common-lisp.net/project/cffi/][CFFI - Use C libraries]]
+- [[https://edicl.github.io/cl-ppcre/][CL-PPCRE - Regular expressions]]
+- [[https://edicl.github.io/drakma/][Drakma - HTTP Requests]]
+- [[https://common-lisp.net/project/iterate/][Iterate - replacement for Loop]]
+- [[https://common-lisp.net/project/local-time/][Local-Time - Times and Dates]]
+- [[https://lparallel.org/]][Lparallel - Parallel processing]]
+- [[https://github.com/melisgl/named-readtables][Named Readtables - for use with reader macros]]
+- [[https://www.cliki.net/Series]][SERIES - map, filter, reduce]]
+- [[https://common-lisp.net/project/usocket/][Usocket - Network programming]]
+
+*** More resources
+- How to Design Programs (https://htdp.org/)
+- Lisp for the Web
 - The Little Schemer
 - SICP Lectures (https://www.youtube.com/playlist?list=PLB63C06FAF154F047)
 - SICP Book (https://sarabander.github.io/sicp/html/index.xhtml)
