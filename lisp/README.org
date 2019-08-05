@@ -20,20 +20,24 @@
 *** Learn Idiomatic Common Lisp
 - Paradigms of Artificial Intelligence Programming (all S and M exercises at least)
 - Common Lisp Recipes
-*** Where to go from here
+
+** Where to go from here
 - [[https://www.dreamsongs.com/Files/PatternsOfSoftware.pdf][Patterns of Software by Richard Gabriel]]
-**** Macros
+*** Macros
 - [[https://sep.yimg.com/ty/cdn/paulgraham/onlisp.pdf?t=1564708198&]][On Lisp]]
 - Let Over Lambda
-**** CLOS
+*** CLOS
 - Object-oriented Programming in Common Lisp: A Programmer's Guide to CLOS
 - The Art of the Metaobject Protocol
-**** Low-level Lisp
+*** Low-level
 - [[http://stevelosh.com/blog/2016/12/chip8-cpu/][CHIP-8 in Common Lisp]]
 - [[Embedded Common Lisp][https://common-lisp.net/project/ecl/main.html]]
-**** Games
+*** Web
+- Lisp for the Web
+*** Games
 - Land of Lisp
-**** Common Libraries
+
+** Common Libraries
 - [[https://common-lisp.net/project/alexandria/][Alexandria]]
 - [[https://common-lisp.net/project/bordeaux-threads/][Bordeaux Threads (concurrency)]]
 - [[https://common-lisp.net/project/cffi/][CFFI - Use C libraries]]
@@ -46,9 +50,8 @@
 - [[https://www.cliki.net/Series]][SERIES - map, filter, reduce]]
 - [[https://common-lisp.net/project/usocket/][Usocket - Network programming]]
 
-*** More resources
+** More resources
 - How to Design Programs (https://htdp.org/)
-- Lisp for the Web
 - The Little Schemer
 - SICP Lectures (https://www.youtube.com/playlist?list=PLB63C06FAF154F047)
 - SICP Book (https://sarabander.github.io/sicp/html/index.xhtml)
