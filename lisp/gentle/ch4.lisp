@@ -172,10 +172,7 @@
           (> temp 100))))
 
 (defun 4-22-and-or (temp scale)
-  (or
-   (and
-    (equal scale 'fahrenheit)
-    (> temp 212))
-   (and
-    (equal scale 'celcius)
-    (> temp 100))))
+  (or (and (equal scale 'fahrenheit)
+           (> temp 212))
+      (and (equal scale 'celcius)
+           (> temp 100))))
