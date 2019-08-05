@@ -5,7 +5,6 @@
 | /    | division       |
 | abs  | absolute value |
 | sqrt | square root    |
-|      |                |
 
 *** Predicates
 | numberp | is a number?                 |
@@ -34,3 +33,5 @@
 | list   | create a list containing the inputs        |
 | length | length of a list                           |
 
+*** Defining a function
+(defun name (args) body)
