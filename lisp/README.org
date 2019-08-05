@@ -14,7 +14,7 @@
 
 *** Roadmap
 **** Basics of Common Lisp
-- Common Lisp: A Gentle Introduction to Symbolic Computation (all exercises)
+- [[https://www.cs.cmu.edu/~dst/LispBook/book.pdf][Common Lisp: A Gentle Introduction to Symbolic Computation (all exercises)]]
 - [[http://www.gigamonkeys.com/book/][Practical Common Lisp]]
 
 **** Practice
