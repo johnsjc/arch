@@ -10,37 +10,46 @@
 
 *** Help
 - [[http://www.lispworks.com/documentation/lw70/CLHS/Front/Contents.htm][Common Lisp Language Specification]]
-- [[https://discord.gg/tffeu2x]][Discord]]
+- [[https://discord.gg/tffeu2x][Discord]]
 
 *** Roadmap
 **** Basics of Common Lisp
 - Common Lisp: A Gentle Introduction to Symbolic Computation (all exercises)
 - [[http://www.gigamonkeys.com/book/][Practical Common Lisp]]
+
 **** Practice
 - [[https://exercism.io/my/tracks/common-lisp][Exercism]], [[https://projecteuler.net/][Project Euler]], [[https://adventofcode.com/][Advent of Code]]
+
 **** Learn Idiomatic Common Lisp
 - Paradigms of Artificial Intelligence Programming (all S and M exercises at least)
 - Common Lisp Recipes
 
+
 *** Where to go from here
 - [[https://www.dreamsongs.com/Files/PatternsOfSoftware.pdf][Patterns of Software by Richard Gabriel]]
+
 **** Macros
-- [[https://sep.yimg.com/ty/cdn/paulgraham/onlisp.pdf?t=1564708198&]][On Lisp]]
+- [[https://sep.yimg.com/ty/cdn/paulgraham/onlisp.pdf][On Lisp]]
 - Let Over Lambda
+
 **** CLOS
 - Object-oriented Programming in Common Lisp: A Programmer's Guide to CLOS
 - The Art of the Metaobject Protocol
+
 **** Low-level
 - [[http://stevelosh.com/blog/2016/12/chip8-cpu/][CHIP-8 in Common Lisp]]
-- [[Embedded Common Lisp][https://common-lisp.net/project/ecl/main.html]]
+- [[https://common-lisp.net/project/ecl/main.html][Embedded CL]]
+
 **** Web
 - Lisp for the Web
+
 **** Games
 - Land of Lisp
 
+
 *** More resources
 - [[https://github.com/CodyReichert/awesome-cl][Awesome CL]]
-- How to Design Programs (https://htdp.org/)
+- [[https://htdp.org/][How to Design Programs]]
 - The Little Schemer
-- SICP Lectures (https://www.youtube.com/playlist?list=PLB63C06FAF154F047)
-- SICP Book (https://sarabander.github.io/sicp/html/index.xhtml)
+- [[https://www.youtube.com/playlist?list=PLB63C06FAF154F047][SICP Lectures]]
+- [[https://sarabander.github.io/sicp/html/index.xhtml][SICP Book]]
