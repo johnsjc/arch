@@ -1,0 +1,36 @@
+*** Arithmetic Functions
+| +    | addition       |
+| -    | subtraction    |
+| *    | multiplication |
+| /    | division       |
+| abs  | absolute value |
+| sqrt | square root    |
+|      |                |
+
+*** Predicates
+| numberp | is a number?                 |
+| symbolp | is a symbol?                 |
+| zerop   | is zero?                     |
+| oddp    | is odd?                      |
+| evenp   | is even?                     |
+| <       | is less than?                |
+| >       | is greater than?             |
+| equal   | are equal?                   |
+| not     | flip boolean value           |
+| listp   | is a list?                   |
+| consp   | is a cons cell?              |
+| atom    | is atomic (number or symbol) |
+| null    | is null?                     |
+
+*** List Functions
+| first  | first element                              |
+| second | second element                             |
+| third  | third element                              |
+| fourth | fourth element                             |
+| rest   | all elements except the first              |
+| car    | analogous to first                         |
+| cdr    | analogous to rest                          |
+| cons   | create a cons cell with car and cdr inputs |
+| list   | create a list containing the inputs        |
+| length | length of a list                           |
+
