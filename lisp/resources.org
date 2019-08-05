@@ -1,0 +1,13 @@
+* Books
+  Practical Common Lisp
+  Common Lisp Recipes 
+  Lisp Cookbook (https://lispcookbook.github.io/cl-cookbook/)
+  How to Design Programs (https://htdp.org/)
+  Land of Lisp
+  Lisp for the Web
+  Paradigms of AI Programming
+  On Lisp
+  Let Over Lambda
+  The Little Schemer
+  SICP Lectures (https://www.youtube.com/playlist?list=PLB63C06FAF154F047)
+  SICP Book (https://sarabander.github.io/sicp/html/index.xhtml)
