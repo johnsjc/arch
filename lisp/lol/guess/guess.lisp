@@ -26,11 +26,9 @@
   (setf *high* 100)
   (guess-my-number))
 
-#|
-global variables:
-  (defparameter variable value) :   define *mutable* variable. convention to have *earmuffs*
-  (setf variable value)         :   change the value of a *mutable* variable
+;;; global variables:
+;;  (defparameter variable value) :   define *mutable* variable. convention to have *earmuffs*
+;;  (setf variable value)         :   change the value of a *mutable* variable
 
-functions:
-  (defun name (args) body)      :   define a global function
-|#
+;;; functions:
+;;  (defun name (args) body)      :   define a global function
