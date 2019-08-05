@@ -20,6 +20,7 @@
 | consp   | is a cons cell?              |
 | atom    | is atomic (number or symbol) |
 | null    | is null?                     |
+| plusp   | is positive?                 |
 
 *** List Functions
 | first  | first element                              |
