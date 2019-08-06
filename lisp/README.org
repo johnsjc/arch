@@ -34,7 +34,7 @@
 - The Art of the Metaobject Protocol
 
 *** Music composition
-- [[https://quod.lib.umich.edu/s/spobooks/bbv9810.0001.001/1:1/--algorithmic-composition-a-gentle-introduction-to-music?rgn=div1;view=toc][Algorithmic Composition]]
+- [[https://quod.lib.umich.edu/s/spobooks/bbv9810.0001.001/1:1/--algorithmic-composition-a-gentle-introduction-to-music?rgn=div1;view=toc][Algorithmic Composition]] (Version 2 with CL)
 
 **** Low-level
 - [[http://stevelosh.com/blog/2016/12/chip8-cpu/][CHIP-8 in Common Lisp]]
