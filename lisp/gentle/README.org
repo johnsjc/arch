@@ -7,32 +7,54 @@
 | sqrt | square root    |
 
 *** Predicates
-| numberp | is a number?                 |
-| symbolp | is a symbol?                 |
-| zerop   | is zero?                     |
-| oddp    | is odd?                      |
-| evenp   | is even?                     |
-| <       | is less than?                |
-| >       | is greater than?             |
-| equal   | are equal?                   |
-| not     | flip boolean value           |
-| listp   | is a list?                   |
-| consp   | is a cons cell?              |
-| atom    | is atomic (number or symbol) |
-| null    | is null?                     |
-| plusp   | is positive?                 |
+| numberp | is a number?                                                  |
+| symbolp | is a symbol?                                                  |
+| zerop   | is zero?                                                      |
+| oddp    | is odd?                                                       |
+| evenp   | is even?                                                      |
+| <       | is less than?                                                 |
+| >       | is greater than?                                              |
+| equal   | are equal?                                                    |
+| not     | flip boolean value                                            |
+| listp   | is a list?                                                    |
+| consp   | is a cons cell?                                               |
+| atom    | is atomic (number or symbol)                                  |
+| null    | is null?                                                      |
+| plusp   | is positive?                                                  |
+| eq      | are the addresses the same? (symbols)                         |
+| eql     | compares addresses and numbers of same type (default)         |
+| =       | compares numbers (use in all cases)                           |
+| equalp  | similar to equal but more liberal (ignores case for instance) |
 
 *** List Functions
-| first  | first element                              |
-| second | second element                             |
-| third  | third element                              |
-| fourth | fourth element                             |
-| rest   | all elements except the first              |
-| car    | analogous to first                         |
-| cdr    | analogous to rest                          |
-| cons   | create a cons cell with car and cdr inputs |
-| list   | create a list containing the inputs        |
-| length | length of a list                           |
+| first             | first element                                                                |
+| second            | second element                                                               |
+| third             | third element                                                                |
+| fourth            | fourth element                                                               |
+| rest              | all elements except the first                                                |
+| car               | analogous to first                                                           |
+| cdr               | analogous to rest                                                            |
+| cons              | create a cons cell with car and cdr inputs                                   |
+| list              | create a list containing the inputs                                          |
+| length            | length of a list                                                             |
+| append            | returns the result of appending one list to another                          |
+| reverse           | returns the reverse of a list                                                |
+| nthcdr            | returns the nth cdr of a list                                                |
+| nth               | returns the nth car of a list                                                |
+| last              | returns the last cons cell of a list                                         |
+| remove            | returns a list with elements removed                                         |
+| member            | returns whether a set contains a value (and the sublist)                     |
+| intersection      | returns a set of items that appear in both sets                              |
+| union             | returns a set of items that appear in either set                             |
+| set-difference    | returns a set with the items in the second set removed from the first        |
+| subsetp           | returns whether a set is a subset of another set                             |
+| set-exclusive-or  | returns a set with the items that are NOT present in both sets.              |
+| remove-duplicates | returns a list with duplicates removed.                                      |
+| assoc             | returns the first entry in a list of lists ((k, v)) where the key matches    |
+| rassoc            | returns the first entry in a list of lists ((k, v)) where the value matches  |
+| subst             | substitutes one item for another everywhere in a list. returns the new list. |
+| sublis            | like subst, but multiple items. input is a dotted pair table.                |
+
 
 *** Conditionals
 | if   | 3 clauses: test statement, consequence, else      |
@@ -46,6 +68,20 @@
 
 *** Assignment
 | setf | assign values to variables |
+
+*** Keywords
+
+Functions like member and remove that rely on equality use eql as the predicate by default.
+An optional additional :test argument can be specified to change this:
+e.g., (member '(5 diamonds) cards :test #'equal)
+
+:test is also a keyword for the following functions: 
+union, intersection, set-difference, assoc, rassoc, subst, and sublis.
+
+Other useful keywords include the following:
+| remove | :count <n>  | defines how many elements to remove      |
+|        | :from-end t | remove starting from the end of the list |
+
 
 *** Defining a function
 (defun name (args) body)
