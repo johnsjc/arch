@@ -176,3 +176,18 @@
            (> temp 212))
       (and (equal scale 'celcius)
            (> temp 100))))
+
+(defun 4-29-if (x y)
+  (if x
+      (if y
+          t)))
+
+(defun 4-29-cond (x y)
+  (cond (x
+         (cond (y
+                t)))))
+
+(defun 4-30 (x y)
+  (cond (x t)
+        (y t)
+        (t nil)))

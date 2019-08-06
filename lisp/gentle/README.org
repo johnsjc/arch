@@ -34,5 +34,18 @@
 | list   | create a list containing the inputs        |
 | length | length of a list                           |
 
+*** Conditionals
+| if   | 3 clauses: test statement, consequence, else      |
+| cond | like a switch statement and can have many clauses |
+| and  | returns NIL or the last non-NIL value             |
+| or   | returns the first non-NIL value or NIL.           |
+
+*** Creating local variables
+| let  | create local variable(s) in a new lexical scope            |
+| let* | like let, but required if variables have interdependencies |
+
+*** Assignment
+| setf | assign values to variables |
+
 *** Defining a function
 (defun name (args) body)
