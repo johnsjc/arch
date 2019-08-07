@@ -275,7 +275,7 @@
   "Every implemented using remove-if"
   (null (remove-if predicate my-list)))
 
-;;; Keyboard exercise -- block world
+;;; Keyboard exercise -- block world!
 
 (setf database
       '((b1 shape brick)
