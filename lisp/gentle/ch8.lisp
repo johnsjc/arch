@@ -544,8 +544,7 @@
          (append (flatten (car tree))
                  (flatten (cdr tree))))))
 
-(defun questions ()
-  
+(defun questions ()  
   (let* ((q1 '(is robert descended from deirdre?))
          (q2 '(who are yvettes ancestors?))
          (q3 '(what is the generation gap between olivia and frank?))
