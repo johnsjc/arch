@@ -5,6 +5,7 @@
 | /    | division       |
 | abs  | absolute value |
 | sqrt | square root    |
+| rem  | remainder      |
 
 *** Predicates
 | numberp | is a number?                                                  |
