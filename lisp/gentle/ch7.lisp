@@ -1,3 +1,5 @@
+;;; 7 -- Applicators
+
 (defun 7-1 ()
   "Uses mapcar to add one to every element of a list."
   (flet ((add1 (n)
