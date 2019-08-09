@@ -563,3 +563,118 @@
               (,q5 ,(grandparents 'olivia))
               ))))
     answers))
+
+;;; End of keyboard exercise
+
+(defun 8-61 (n)
+  "Counts from 1 to N (tail recursive)"
+  (labels (
+       (count-up-tr (n result)
+         (cond ((zerop n) result)
+               (t
+                (count-up-tr (- n 1) (cons n result))))))
+    (count-up-tr n nil)))
+
+(defun 8-62 (n)
+  "Compute factorial of N"
+  (labels (
+           (fact-tr (n result)
+             (cond ((zerop n) result)
+                   (t
+                    (fact-tr (- n 1) (* n result))))))
+    (fact-tr n 1)))
+
+(defun 8-63-union (list-a list-b)
+  "Tail recursive implementation of union"
+  (cond ((null list-a) list-b) ; return list-b if done processing
+        ((member (first list-a) list-b) ; if member of list b
+         (8-63-union (rest list-a) list-b)) ; skip
+        (t (8-63-union (rest list-a) ; else add to result
+                       (cons (first list-a) list-b)))))
+
+(defun 8-63-intersection (list-a list-b)
+  "Tail recursive implementation of intersection"
+  (labels ((tr-intersection (list-a list-b result)
+             (cond ((null list-a) result) ; return result if done processing
+                   ((member (first list-a) list-b) ; if member of list b
+                    (tr-intersection (rest list-a) list-b ; add to result
+                                     (cons (first list-a) result)))
+                   (t (tr-intersection (rest list-a) list-b result))))) ; else skip
+    (tr-intersection list-a list-b nil))) ; call helper function with accumulator
+
+(defun 8-63-set-difference (list-a list-b)
+  "Tail recursive implementation of set-difference"
+  (labels ((tr-set-difference (list-a list-b result)
+             (cond ((null list-a) result) ; return result if done processing
+                   ((member (first list-a) list-b) ; if member of list b
+                    (tr-set-difference (rest list-a) list-b result)) ; skip
+                   (t (tr-set-difference (rest list-a) list-b
+                                         (cons (first list-a) result)))))) ; else add to result
+    (tr-set-difference list-a list-b nil))) ; call helper function with accumulator
+
+(defun 8-64 (predicate tree)
+  "Applicative operator that returns the first value
+   in TREE that satisfies PREDICATE"
+  (cond ((null tree) nil) ; if tree/element null, return nil
+        ((atom tree) ; if atom
+         (if (funcall predicate tree) ; if atom satisfies predicate
+             tree ; return atom
+             nil)) ; else nil
+        (t (or (8-64 predicate (first tree)) ; search both sides of tree and return first result
+               (8-64 predicate (rest tree))))))
+
+(defun 8-65-count-slices (loaf)
+  "Tail recursive function to count slices of bread in LOAF"
+  (labels ((tr-count-slices (loaf result)
+             (cond ((null loaf) result) ; if the loaf is extinguished, return result
+                   (t (tr-count-slices (rest loaf) ; else increment result and keep going
+                                       (+ 1 result)))))) ;
+    (tr-count-slices loaf 0))) ; call helper function
+
+(defun 8-65-reverse (my-list)
+  "Tail recursive function to reverse MY-LIST"
+  (labels ((tr-reverse (my-list result)
+             (cond ((null my-list) result) ; done processing; return result
+                   (t (tr-reverse (rest my-list) ; else 
+                                  (cons (first my-list)
+                                          result))))))
+    (tr-reverse my-list nil))) ; call helper function
+
+(defun 8-66 (expr)
+  "Evaluates arithmetic S-expressions.
+   (2 + (3 * 4)) evaluates to 14."
+  (cond ((numberp expr) expr) ; numbers evaluate to themselves
+        (t (funcall (second expr) ; otherwise, call the arithmetic operator
+                    (8-66 (first expr)) ; first argument : first operand
+                    (8-66 (third expr)))))) ; third argument : second operand
+
+(defun 8-67 (expr)
+  "Returns T if EXPR is a legal arithmetic S-expression."
+  (cond ((numberp expr) t) ; true if expr is a number
+        ((atom expr) nil) ; false for all other atoms
+        (t (and (8-67 (first expr)) ; the first operand must be a legal expr
+                (member (second expr) ; the function  must be an arithmetic one
+                        '(+ - * /))
+                (8-67 (third expr)))))) ; the second operand must be a legal expr
+
+(defun prime-factors (n)
+  "Returns a list of prime factors for N.
+   (prime-factors 60) => (2 2 3 5)"
+  (labels ((factors-help (n p)
+             ;; if n is one, we are finished factoring
+             (cond ((equal n 1) nil) 
+                   ((zerop (rem n p)) ; if n divides evenly into p
+                    (cons p (factors-help (/ n p) p))) ; add p to list of factors
+                   (t (factors-help n (+ p 1)))))) ; else increment p
+    (factors-help n 2))) ;; call helper function with p=2
+
+(defun prime-factors-tree (n)
+  "Returns a factorization tree for N
+   (prime-factors-tree 60) => (60 2 (30 2 (15 3 5)))"
+  (labels ((factors-help (n p)
+             ;; if n equals p, we are done. (using list and not cons)
+             (cond ((equal n p) n)
+                   ((zerop (rem n p)) ; if n divides evenly
+                    (list n p (factors-help (/ n p) p))) ; create (list n p (...)
+                   (t (factors-help n (+ p 1)))))) ; else increment n
+    (factors-help n 2))) ; call helper function with p=2
