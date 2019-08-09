@@ -26,6 +26,7 @@
 | eql     | compares addresses and numbers of same type (default)         |
 | =       | compares numbers (use in all cases)                           |
 | equalp  | similar to equal but more liberal (ignores case for instance) |
+| stringp | is it a string?                                               |
 
 *** List Functions
 | first             | first element                                                                            |
@@ -88,6 +89,35 @@ union, intersection, set-difference, assoc, rassoc, subst, and sublis.
 mapcar and every do not accept any keyword arguments, but they can operate on multiple lists.
 
 
-*** Defining a function
+*** Defining functions
 (defun name (args) body)
+(labels ((name (args) ...
+
+*** Format
+Format is used to print text to the string. It has many format modifiers:
+| specifier | description                      | example                     | notes                            |
+| ~%        | newline                          | "Time flies~%Like an arrow" |                                  |
+| ~&        | carriage return                  | "~&Mary had a little bat."  | begin each line as good practice |
+| ~S        | s-expression                     | "~S squared is ~S"          | one additional argument per ~S   |
+|           |                                  |                             | ~10S sets width to 10            |
+| ~A        | like ~S but ignores escape chars | "Hello, ~A"                 |                                  |
+| ~R        | 1 => one, 20 => twenty           | "I am ~R years old"         |                                  |
+| ~D        | print number in base 10          | "x = ~D"                    | also takes width parameter       |
+| ~F        | print floating point             | "amount = ~5,2F"            | width,precision                  |
+
+*** File I/O
+| read           | reads a Lisp object and returns the object as its value                                         |
+| yes-or-no-p    | takes a format string as a prompt and returns T or nil depending on if the user types yes or no |
+| y-or-n-p       | same as yes-or-no-p but only requires the user to type y or n                                   |
+| with-open-file | creates a local variable like let and sets it to a stream object (use read to read from it      |
+|                | to write to a file, use :direction :output and format to write (Use ~S to serialize data)       |
+
+Note: You can compare strings and symbols directly with equal.
+Note: other primitives exist:
+| prin1  | works like ~S                                                       |
+| princ  | works like ~A                                                       |
+| print  | goes to newline, prints argument with prin1, and a space with princ |
+| terpri | moves cursor to new line                                            |
+
+*** Handling end of file conditions
 
