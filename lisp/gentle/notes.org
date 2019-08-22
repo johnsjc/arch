@@ -65,17 +65,24 @@
 
 
 *** Conditionals
-| if   | 3 clauses: test statement, consequence, else      |
-| cond | like a switch statement and can have many clauses |
-| and  | returns NIL or the last non-NIL value             |
-| or   | returns the first non-NIL value or NIL.           |
+| if     | 3 clauses: test statement, consequence, else      |
+| cond   | like a switch statement and can have many clauses |
+| and    | returns NIL or the last non-NIL value             |
+| or     | returns the first non-NIL value or NIL.           |
+| when   | evaluate statements only when true                |
+| unless | evaluate statements only when false               |
 
 *** Creating local variables
 | let  | create local variable(s) in a new lexical scope            |
 | let* | like let, but required if variables have interdependencies |
 
 *** Assignment
-| setf | assign values to variables |
+| setf | assign values to variables                                |
+| incf | shortcut to increment a variable                          |
+| decf | shortcut to decrement a variable                          |
+| push | shortcut to add an element on the front of a list         |
+| pop  | shortcut to remove and return the first element of a list |
+
 
 *** Keywords
 
