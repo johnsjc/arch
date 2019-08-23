@@ -16,7 +16,7 @@
 
 (defparameter +corners+ '(1 3 7 9)) ; corner spaces
 
-(defparameter +sides+ '(2 4 6 8)) ; side spaces
+(defparameter +edges+ '(2 4 6 8)) ; edge spaces
 
 ;;; Utility functions
 
@@ -151,6 +151,7 @@
    according to different strategies."
   (or (three-in-a-row-strategy board)
       (block-opponent-strategy board)
+      (avoid-fork-strategy board)
       (block-squeeze-play-strategy board)
       (block-two-on-one-strategy board)
       (fork-strategy board)
@@ -251,7 +252,7 @@ After:
 
   "
   (when (squeeze-play-p board)
-    (let ((position (find-empty-position board +sides+)))
+    (let ((position (find-empty-position board +edges+)))
       (and position (list position "block squeeze play")))))
 
 (defun block-two-on-one-strategy (board)
@@ -368,24 +369,47 @@ After:
    O |   | X
  
   "
-  (let ((forks (find-forks board (all-legal-moves board) nil)))
-    (when forks (random-choice forks))))
+  (let ((forks (find-forking-moves +computer+ board (all-legal-moves board))))
+    (when forks (list
+                 (random-choice forks)
+                 "fork attack"))))
 
-(defun find-forks (board moves result)
-  "Tries each legal move until a fork is found"
+(defun avoid-fork-strategy (board)
+  "Strategy to avoid making a move that leaves a forking possibility"
+  (let* ((legal-moves (all-legal-moves board))
+         (candidates (find-fork-avoiding-moves board legal-moves)))
+    (when (and (not (zerop (length (set-difference legal-moves candidates))))
+               candidates)
+      (list (random-choice candidates)
+            "avoid fork"))))
+
+(defun find-fork-avoiding-moves (board moves &optional result)
+  "Find all moves that do not cause a forking possibility on the board."
+  (cond ((null moves) result)
+        (t (let ((move (first moves)))
+             (make-move +computer+ move board)
+             (when (zerop (length
+                           (find-forking-moves +player+ board (all-legal-moves board))))
+               (push move result))
+             (make-move 0 move board)
+             (find-fork-avoiding-moves board (rest moves) result)))))
+
+(defun find-forking-moves (player board moves &optional result)
+  "Simulates each legal move for the given player 
+   and returns which ones cause a fork."
   (cond ((null moves) result)
         (t (let ((move (first moves)))    
-             (make-move +computer+ move board)
-             (when (fork-present-p board)
-               (push (list move "fork") result))
+             (make-move player move board)
+             (when (fork-present-p player board)
+               (push move result))
              (make-move 0 move board)
-             (find-forks board (rest moves) result)))))
+             (find-forking-moves player board (rest moves) result)))))
 
-(defun fork-present-p (board)
-  "Returns T if there is a fork on the board."
+(defun fork-present-p (player board)
+  "Returns T if there is a fork on the board for the player."
   (let ((number-of-threats
           (length (remove-if-not #'(lambda (sum)
-                                     (equal sum (* 2 +computer+)))
+                                     (equal sum (* 2 player)))
                                  (compute-sums board)))))
     (> number-of-threats 1)))
 
