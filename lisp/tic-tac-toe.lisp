@@ -1,3 +1,7 @@
+;;;; Tic-Tac-Toe
+;;;; Play against the computer with (play-one-game)
+
+
 ;;; Global constants
 (defparameter +player+ 1) ; X
 
