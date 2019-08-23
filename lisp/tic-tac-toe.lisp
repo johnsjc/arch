@@ -107,15 +107,22 @@
         (player-move board)
         (computer-move board))))
 
+(defun play-again-prompt ()
+  "Prompts to play again"
+  (when (y-or-n-p "Would you like to play again? ")
+    (play-one-game)))
+
 (defun player-move (board)
   "Execute the player's move."
   (let* ((position (read-a-legal-move board))
          (new-board (make-move +player+ position board)))
     (print-board new-board)
     (cond ((winnerp new-board)
-           (format t "~&You win!"))
+           (format t "~&You win!")
+           (play-again-prompt))          
           ((board-full-p new-board)
-           (format t "~&Tie game."))
+           (format t "~&Tie game.")
+           (play-again-prompt))
           (t (computer-move new-board)))))
 
 (defun read-a-legal-move (board)
@@ -141,9 +148,11 @@
     (format t "~&My strategy: ~A~%" strategy)
     (print-board new-board)
     (cond ((winnerp new-board)
-           (format t "~&I win!"))
+           (format t "~&I win!")
+           (play-again-prompt))
           ((board-full-p new-board)
-           (format t "~&Tie game."))
+           (format t "~&Tie game.")
+           (play-again-prompt))
           (t (player-move new-board)))))
 
 (defun choose-best-move (board)
