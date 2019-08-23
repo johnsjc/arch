@@ -22,7 +22,6 @@
     (nth index my-list)))
 
 
-
 ;;; Display functions
 
 (defun convert-to-letter (v)
@@ -168,7 +167,8 @@
     (and position (list position "make 3 in a row"))))
 
 (defun block-opponent-strategy (board)
-  "Strategy to block the player from making 3 in a row.
+  "
+  Strategy to block the player from making 3 in a row.
    e.g.
 
   Before:
@@ -184,6 +184,7 @@ After:
    O | X |  
   -----------
    O |   |  
+  
   "  
   (let ((position (win-or-block board
                                 (* 2 +player+))))
@@ -226,7 +227,8 @@ After:
   (check-diagonals board +player+ 12))
 
 (defun block-squeeze-play-strategy (board)
-  "Strategy to defend against a squeeze play.
+  "
+  Strategy to defend against a squeeze play.
   e.g.
 
   Before:
@@ -249,7 +251,8 @@ After:
       (and position (list position "block squeeze play")))))
 
 (defun block-two-on-one-strategy (board)
-  "Strategy to defend against a two-on-one attack.
+  "
+  Strategy to defend against a two-on-one attack.
   e.g.
 
   Before:
@@ -265,7 +268,8 @@ After:
      | X |  
   -----------
    X |   |  
-"
+
+  "
   (when (two-on-one-p board)
     (let ((position (find-empty-position board +corners+)))
       (and position (list position "block two-on-one")))))
@@ -289,7 +293,8 @@ After:
       (check-diagonals board 0 11)))
 
 (defun squeeze-play-attack-strategy (board)
-  "Attempts to set up a squeeze play if one exists.
+  "
+  Strategy to set up a squeeze play if one exists.
   e.g.
 
   Before:
@@ -313,7 +318,8 @@ After:
       (and position (list position "squeeze play attack")))))
 
 (defun two-on-one-attack-strategy (board)
-  "Attempts to set up a two-on-one attack if it exists.
+  "
+  Strategy to set up a two-on-one attack if it exists.
   e.g.
 
   Before:
@@ -339,7 +345,8 @@ After:
       (and position (list position "two-on-one attack")))))
 
 (defun fork-strategy (board)
-  "Strategy to set up a fork on the board to ensure a win.
+  "
+  Strategy to set up a fork on the board to ensure a win.
   e.g.
 
   Before:
@@ -385,7 +392,8 @@ After:
                  '(1 2 3 4 5 6 7 8 9)))
 
 (defun two-in-a-row-strategy (board)
-  "Strategy to make 2 in a row.
+  "
+  Strategy to make 2 in a row.
   e.g.  
   
   Before:
