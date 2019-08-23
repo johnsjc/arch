@@ -251,7 +251,8 @@ After:
      |   | X
 
   "
-  (when (squeeze-play-p board)
+  (when (and (equal 6 (length (all-legal-moves board)))
+             (squeeze-play-p board))
     (let ((position (find-empty-position board +edges+)))
       (and position (list position "block squeeze play")))))
 
@@ -275,7 +276,8 @@ After:
    X |   |  
 
   "
-  (when (two-on-one-p board)
+  (when (and (equal 6 (length (all-legal-moves board)))
+             (two-on-one-p board))
     (let ((position (find-empty-position board +corners+)))
       (and position (list position "block two-on-one")))))
 
